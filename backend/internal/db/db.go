@@ -25,3 +25,12 @@ type Post struct {
 }
 
 // not touching auth until like next meeting!
+
+// dummy data, replace as needed with actual db
+var Members = []Member{
+	{ID: 1, Name: "AV Mishra", GradYear: 2030, Alumni: false, Verified: true},
+}
+
+var Posts = []Post{
+	{ID: 1, Title: "Welcome to SIGICPC", Author: "Exec Board"},
+}
