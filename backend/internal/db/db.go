@@ -19,7 +19,8 @@ type Post struct {
 	ID        int    `json:"id" db:"id"`
 	Title     string `json:"title" db:"title"`
 	Link      string `json:"link" db:"link"`
-	Image     string `json:"image" db:"image"`
+	Image     string `json:"image" db:"image_url"`
+	Content   string `json:"content" db:"content"`
 	Timestamp string `json:"timestamp" db:"created_at"`
 	Author    string `json:"author" db:"author"`
 }
