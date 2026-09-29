@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"sigicpc-backend/internal/handlers"
+	"sigicpc-backend/internal/middleware"
 )
 
 func enableCORS(next http.Handler) http.Handler {
@@ -27,5 +28,5 @@ func main() {
 	mux.HandleFunc("GET /api/posts", handlers.GetPosts)
 
 	log.Println("Listening on http://localhost:8080...")
-	log.Fatal(http.ListenAndServe(":8080", enableCORS(mux)))
+	log.Fatal(http.ListenAndServe(":8080", enableCORS(middleware.RateLimit(mux))))
 }
