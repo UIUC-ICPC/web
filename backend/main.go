@@ -24,6 +24,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /api/members", handlers.GetMembers)
+	mux.HandleFunc("GET /api/posts", handlers.GetPosts)
 
 	log.Println("Listening on http://localhost:8080...")
 	log.Fatal(http.ListenAndServe(":8080", enableCORS(mux)))
